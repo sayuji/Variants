@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:variants/page/login_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -43,7 +44,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       color: Color.fromRGBO(11, 88, 237, 1),
                       fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 100),
                 // Username Field
                 TextFormField(
                   controller: _usernameController,
@@ -114,7 +115,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(height: 90),
                 // Register Button
                 SizedBox(
                   width: double.infinity, // Make the button take the full width
@@ -136,8 +137,54 @@ class _RegisterPageState extends State<RegisterPage> {
                       minimumSize: Size(
                           double.infinity, buttonHeight), // Set minimum size
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage()),
+                      );
+                    },
                     child: const Text('REGISTER'),
+                  ),
+                ),
+                SizedBox(height: 75),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Divider(color: Colors.black),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Text(
+                          'Login with',
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Divider(color: Colors.black),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      CircleAvatar(
+                        radius: 25,
+                        backgroundImage: AssetImage('images/google.png'),
+                      ),
+                      SizedBox(width: 20),
+                      CircleAvatar(
+                        radius: 25,
+                        backgroundImage: AssetImage('images/fb.png'),
+                      ),
+                    ],
                   ),
                 ),
               ],
