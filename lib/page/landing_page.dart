@@ -9,7 +9,7 @@ class LandingPage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
-          ima
+          child: Image.asset('images/bg.jpg'),
         ),
       ),
     );
